@@ -15,7 +15,7 @@ div p {
 .Top {
 	Color: Black;
 	background-color: white;
-	background: url(Header.png) no-repeat;
+	background: url(http://imgur.com/GeENAXj) no-repeat;
 	height: 200px;
 	width: 100%;
 	margin-bottom:10px;
@@ -24,13 +24,13 @@ div p {
 /*making a button should have a base with a color and a box shadow beneath it, the translateY
 //should be the base box shadow - active boxshadow to look like its going in. */ 
 #click {
-	background: url(button.png) no-repeat center;
+	background: url(http://imgur.com/PzRqxIH) no-repeat center;
 }
 #buy {
-	background: url(buy.png) no-repeat;
+	background: url(http://imgur.com/N0BXgMs) no-repeat;
 }
 #sell {
-	background: url(sell.png) no-repeat;
+	background: url(http://imgur.com/2PDUFo5) no-repeat;
 }
 
 .buttons {
