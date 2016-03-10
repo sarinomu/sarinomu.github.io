@@ -5,22 +5,31 @@
 		<title> Hope </title>
 	</head>
 	<body>
+		<ul>
+			<li>wow</li>
+			<li>wowow</li>
+			<li>wowowow</li>
+			<li>wowowowow</li>
+		</ul>
 		<div class="Top">
 			
 		</div>
+		<p style= "color:white">ClickPower: <span id="checking">0</span></p>
+		<p style= "color:white">ClickPowerParam: <span id="checking2">0</span></p>
+		<p style= "color:white">number: <span id="check2">0</span></p>
 		<div class="ClickingStuff">
 			<div id="clickingSection">
-				<div class="buttons" id="click" onclick="cookieClick(1)">
+				<div class="buttons" id="click">
 				</div>
 				<p>Number:<span id="cookies">0</span></p>
 			</div>
 			<div id="autoclickingSection">
-				<button id= "buy"  class="buttons" type="button" onclick="buyClicker()"></button><br></br>
-				<button id= "sell" class="buttons" type="button" onclick="sellClicker()"></button>
+				<div id= "buy"  class="buttons" onclick="buyClicker()"></div><br></br>
+				<div id= "sell" class="buttons" type="button" onclick="sellClicker()"></div><br></br>
 				<p>Clickers: <span id="clickers">0</span></p>
 				<p>Cost: <span id="clickerCost">10</span></p>
-				<button id="incPower" class = buttons" type ="button" onclick="incPower()">Increase click power</button>
-				<button id="incClickerPower" class = buttons" type ="button" onclick="incClickerPower()">increase clicker power</button>
+				<div id="incPower" class = "buttons" type ="button" onclick="incPower()">Increase click power</div>
+				<div id="incClickerPower" class = "buttons" type ="button" onclick="incClickerPower()">increase clicker power</div>
 			</div>
 		</div>
 		<script type="text/javascript" src="main.js"></script>
