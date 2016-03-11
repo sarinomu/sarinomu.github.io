@@ -66,7 +66,7 @@ function incPower()
 		cookies -= 10;
 		document.getElementById("cookies").innerHTML = cookies;
 		clickPower += 2;
-		document.getElementById("checking").innerHTML = clickPower;
+		document.getElementById("clickPower	").innerHTML = clickPower;
 	}
 }
 
