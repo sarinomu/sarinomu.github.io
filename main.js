@@ -1,4 +1,4 @@
-var cookies = 0;
+var number = 0;
 var clickers = 0;
 var clickPower = 0;
 var clickerPower = 0;
@@ -15,31 +15,31 @@ else if(clickPower >=1)
 	document.getElementById("click").onclick = function() {cookieClick(base, clickPower)};
 }
 
-function cookieClick(number, powerUp)
+function cookieClick(num, powerUp)
 {
 	document.getElementById("checking2").innerHTML = powerUp;
 	if(powerUp < 1)
 	{
-		test = number;
+		test = num;
 	}
 	else if(powerUp > 1)
 	{
-		test = (number * powerUp);
+		test = (num * powerUp);
 	}
 	
 	document.getElementById("check2").innerHTML = number;
-	cookies += test;
-	document.getElementById("cookies").innerHTML = cookies;
+	number += test;
+	document.getElementById("number").innerHTML = number;
 }
 
 function buyClicker()
 {
 	var currentCost = Math.floor(10 * Math.pow(1.1,clickers));
-	if(cookies >= currentCost)
+	if(number >= currentCost)
 	{
-		cookies -= currentCost;
+		number -= currentCost;
 		clickers += 1;
-		document.getElementById("cookies").innerHTML = cookies;
+		document.getElementById("number").innerHTML = number;
 		document.getElementById("clickers").innerHTML = clickers;
 	}
 	var nextCost = Math.floor(10 * Math.pow(1.1,clickers));
@@ -52,8 +52,8 @@ function sellClicker()
 	{
 		clickers -=1;
 		document.getElementById("clickers").innerHTML = clickers;
-		cookies += (Math.floor(10 * Math.pow(1.1,clickers))/2);
-		document.getElementById("cookies").innerHTML = cookies;
+		number += (Math.floor(10 * Math.pow(1.1,clickers))/2);
+		document.getElementById("number").innerHTML = number;
 		var nextCost = Math.floor(10 * Math.pow(1.1,clickers));
 		document.getElementById("clickerCost").innerHTML = nextCost;
 	}
@@ -61,10 +61,10 @@ function sellClicker()
 
 function incPower()
 {
-	if(cookies >= 10)
+	if(number >= 10)
 	{
-		cookies -= 10;
-		document.getElementById("cookies").innerHTML = cookies;
+		number -= 10;
+		document.getElementById("number").innerHTML = number;
 		clickPower += 2;
 		document.getElementById("clickPower").innerHTML = clickPower;
 	}
@@ -72,10 +72,33 @@ function incPower()
 
 function incClickerPower()
 {
-	if(cookies >= 0)
+	if(number >= 0)
 	{
 		clickerPower += 2;
 	}
+}
+
+function save()
+{
+	var save = {
+		number: number,
+		clickers: clickers,
+		clickerPower: clickerPower,
+		clickPower: clickPower
+	}
+
+	localStorage.setItem("save",JSON.stringify(save));
+	alert("Your game has been saved (probably)");
+}
+
+function load()
+{
+	var savegame = JSON.parse(localStorage.getItem("save"));
+	if (typeof savegame.number !== "undefined") number = savegame.number;
+	if (typeof savegame.clickers !== "undefined") clickers = savegame.clickers;
+	if (typeof savegame.clickPower !== "undefined") clickPower = savegame.clickPower;
+	document.getElementById("clickers").innerHTML = clickers;
+	alert("Your game has been loaded (probably)");
 }
 
 //if(clickers > 0)
